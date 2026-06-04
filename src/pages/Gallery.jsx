@@ -9,7 +9,6 @@ export default function Gallery() {
     const [filter, setFilter] = useState("all");
     const [selected, setSelected] = useState(null);
     const [saved, setSaved] = useState([]);
-    const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
 
     // FETCH
@@ -28,8 +27,7 @@ export default function Gallery() {
                 }));
                 setData(photos);
             })
-            .catch(() => setError("Failed to load gallery"))
-            .finally(() => setLoading(false));
+            .catch(() => setError("Failed to load gallery"));
     }, []);
 
     // FILTER
@@ -51,13 +49,6 @@ export default function Gallery() {
         setSelected(null);
         navigate("/booking");
     }, []);
-
-    if (loading)
-        return (
-            <div className="min-h-screen flex items-center justify-center">
-                Loading...
-            </div>
-        );
 
     if (error)
         return (
