@@ -1,8 +1,4 @@
-export async function getGallery() {
-    const res = await fetch(
-        "https://jsonplaceholder.typicode.com/photos?_limit=40"
-    );
+export const PEXELS_API =
+    "https://api.pexels.com/v1/search?query=nail%20art&per_page=40";
 
-    const data = await res.json();
-    return data;
-}
+export const PEXELS_KEY = "5dRufiiCzcjo7mrJcYrM8xx1rbSWx5BDMTVvzqEkJtstNQaE0htMK6PR";
