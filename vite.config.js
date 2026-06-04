@@ -1,13 +1,7 @@
-export default {
-  content: ["./index.html", "./src/**/*.{js,jsx}"],
-  theme: {
-    extend: {
-      colors: {
-        glowPink: "#ff4fd8",
-        softPink: "#ffe4f3",
-        goldGlow: "#ffd700"
-      }
-    }
-  },
-  plugins: []
-};
+import { defineConfig } from 'vite'
+import react from '@vitejs/plugin-react'
+
+export default defineConfig({
+  plugins: [react()],
+  base: '/',
+})
